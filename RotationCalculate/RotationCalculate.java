@@ -3,15 +3,15 @@ package RotationCalculate;
 import edu.prinseton.StdDraw;
 
 public class RotationCalculate {
-	public static double thetastep = 15.0;
+	public static double thetastep = 15.0;       //æ¯æ¬¡æ—‹è½¬çš„è§’åº¦å¢é‡
 	public static int cycle = 360;
 	final public static double PI = Math.PI;
-	public static int dimension = 401;           //ÖĞĞÄµãÊÇ200,200£¬×óÉÏ½ÇÊÇ0,0
-	public static int d = 1;                  //LEDµÆµÄ¼ä¾à
-	public static int LEDlen = 201;              //LEDµÆµÄ¸öÊı£¬°ë¾¶ÊÇ201
+	public static int dimension = 401;           //ä¸­å¿ƒç‚¹æ˜¯200,200ï¼Œå·¦ä¸Šè§’æ˜¯0,0
+	public static int d = 1;                  //LEDç¯çš„é—´è·
+	public static int LEDlen = 201;              //LEDç¯çš„ä¸ªæ•°ï¼ŒåŠå¾„æ˜¯201
 	public static void main(String[] args)
 	{
-		int thetanum =(int) ((double)cycle / thetastep);  //Ò»¹²¼ÆËã¶àÉÙ¸ö½Ç¶ÈµÄÊıÁ¿
+		int thetanum =(int) ((double)cycle / thetastep);  //ä¸€å…±è®¡ç®—å¤šå°‘ä¸ªè§’åº¦çš„æ•°é‡
 		
 		double angle = (2*PI)*180/360;
 		for(int j = 0;j<cycle;j+=(int)thetastep)
@@ -34,14 +34,14 @@ public class RotationCalculate {
 			}
 			
 			try {
-				Thread.sleep(1000); //1000 ºÁÃë£¬Ò²¾ÍÊÇ1Ãë.
+				Thread.sleep(1000); //1000 æ¯«ç§’ï¼Œä¹Ÿå°±æ˜¯1ç§’.
 				} catch(InterruptedException ex) {
 				Thread.currentThread().interrupt();
 				}
 			StdDraw.clear();
 		}
 	}
-	public static double f1(int a)//¹éÒ»»¯ÏÔÊ¾
+	public static double f1(int a)//å½’ä¸€åŒ–æ˜¾ç¤º
 	{
 		//System.out.println((double)a/dimension);
 		return ((double)a/dimension);
