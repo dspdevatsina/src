@@ -71,10 +71,8 @@ void main()
     ListNode *l2 = creatList(array, sizeof(array) / sizeof(array[0]));
     printList(l2);
     printf("total count of this list is %d\n",countList(l2));
-    l2 = freeList(l2);
-    printf("total count of this list is %d\n",countList(l2));
+    l2 = reversList(l2);
     printList(l2);
-    printf("total count of this list is %d\n",countList(l2));
 }
 
 int countList(ListNode * head)
@@ -91,5 +89,30 @@ int countList(ListNode * head)
 
 ListNode * reversList(ListNode * head)
 {
-
+    ListNode * newhead = NULL;
+    ListNode * tail=newhead;
+    ListNode * end;
+    while(head->next != NULL)
+    {
+        end = head;
+        while(end->next->next!=NULL)
+        {
+            end = end->next;
+        }
+        if(newhead == NULL)
+        {
+            newhead = end->next;
+            tail = newhead;
+            tail->next = NULL;
+            end->next = NULL;
+        }
+        else
+        {
+            tail->next = end->next;
+            tail = tail->next;
+            tail->next = NULL;
+            end->next = NULL;
+        }
+    }
+    return newhead;
 }
